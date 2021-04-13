@@ -17,6 +17,7 @@ import GroupIcon from '@material-ui/icons/Group';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import CategoryIcon from '@material-ui/icons/Category';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import NavItem from './NavItem';
 
 const user = {
@@ -45,6 +46,11 @@ const items = [
     href: '/app/president/event',
     icon: EventNoteIcon,
     title: 'Events'
+  },
+  {
+    href: '/app/president/purchases',
+    icon: MonetizationOnIcon,
+    title: 'Club Purchases'
   },
   {
     href: '/app/president/settings',

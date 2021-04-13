@@ -10,6 +10,9 @@ const clubcontroller = require('../controller/Club');
 const CommitteeController = require('../controller/Committee')
 const EventTypeController = require('../controller/EventType')
 const EventReportController = require('../controller/EventReport')
+const ClubPurchasesController = require('../controller/clubPurchases')
+
+
 
 
 
@@ -64,5 +67,11 @@ route.post('/api/EventReport', store.single('Userimg'), EventReportController.cr
 route.get('/api/EventReport', EventReportController.find);
 route.put('/api/EventReport/:id', EventReportController.update);
 route.delete('/api/EventReport/:id', EventReportController.delete);
+
+//EventReport API
+route.post('/api/club-purchases', store.single('Userimg'), ClubPurchasesController.create);
+route.get('/api/club-purchases', ClubPurchasesController.find);
+route.put('/api/club-purchases/:id', ClubPurchasesController.update);
+route.delete('/api/club-purchases/:id', ClubPurchasesController.delete);
 
 module.exports = route

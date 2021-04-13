@@ -28,7 +28,9 @@ import DashboardViewClub from 'src/PresidentDashboards/views/reports/DashboardVi
 import ClubInfo from 'src/PresidentDashboards/views/ClubDashboard/views/ClubInfo';
 import ClubMembers from 'src/PresidentDashboards/views/ClubDashboard/views/ClubMembers';
 import EventView from 'src/PresidentDashboards/views/ClubDashboard/views/event/EventListView';
+import ClubPurchases from 'src/PresidentDashboards/views/ClubDashboard/views/ClubPurchases';
 import SettingsViewPre from 'src/PresidentDashboards/views/settings/SettingsView';
+
 
 //pioneer
 import PioneerDashboardClubLayout from 'src/PioneerDashboards/layouts/DashboardLayout';
@@ -104,6 +106,7 @@ const routesAdmin = [
       { path: 'basicInformation', element: <ClubInfo /> },
       { path: 'clubMembers', element: <ClubMembers /> },
       { path: 'event', element: <EventView /> },
+      { path: 'purchases', element: <ClubPurchases /> },
       { path: 'settings', element: <SettingsViewPre /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
