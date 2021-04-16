@@ -14,7 +14,7 @@ export async function getStudentUser() {
 export function postClubInfo(data) {
     axios({
                     method: 'put',
-                    url: '/api/club/6071d194d7edbe148cce1eff',
+                    url: '/api/club/604ea20dd0367415e82112af',
                     data: qs.stringify(data),
                     headers: {
                       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'

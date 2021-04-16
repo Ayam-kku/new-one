@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     height: '100%',
     overflow: 'hidden',
-    width: '100%'
+    width: '100%',
   },
   wrapper: {
     display: 'flex',
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     paddingTop: 64,
     [theme.breakpoints.up('lg')]: {
-      paddingLeft: 256
+      paddingRight: 256
     }
   },
   contentContainer: {
@@ -30,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
     flex: '1 1 auto',
     height: '100%',
     overflow: 'auto'
-  }
+  },
+  
 }));
 
 const DashboardLayout = () => {

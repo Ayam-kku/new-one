@@ -63,7 +63,7 @@ export async function getCommittee() {
 
 
 export async function getStudentUser() {
-  const res1 = await axios('/api/club/?id=6071d194d7edbe148cce1eff');
+  const res1 = await axios('/api/club/?id=604ea20dd0367415e82112af');
   let result1 = [];
         res1.data.member.forEach((req) => {     
             result1.push(req.memberInfo.name);

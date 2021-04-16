@@ -46,7 +46,7 @@ const LatestProducts = ({ className, ...rest }) => {
     >
       <CardHeader
         subtitle={`${colleges.length} in total`}
-        title="Latest Colleges"
+        title="الكليات المضافة حديثا"
       />
       <Divider />
       <List>
@@ -83,7 +83,7 @@ const LatestProducts = ({ className, ...rest }) => {
           style={{ color: '#1E8449' }}
           onClick={()=>{ navigate('/app/admin/college', { replace: true }); }}
         >
-          View all
+          مشاهدة الكل
         </Button>
       </Box>
     </Card>

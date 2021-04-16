@@ -93,7 +93,7 @@ const EventCard =() => {
 
             <CardActions>
                 <Button size="small" color="primary" disabled>
-                COMPUTER PROGRAMMING
+                نادي البرمجة
                 </Button>
                 <Button size="small" color="primary" disabled>
                 {card.evenDate}
@@ -107,7 +107,7 @@ const EventCard =() => {
       <>
       <div className="w-full lg:w-12/12 px-4">
                 <h2  className="text-green-500 font-bold text-5xl">
-                    UPCOMING EVENTS
+                   الفعاليات القادمة
                 </h2>
                 <div className="flex flex-wrap justify-center grid-cols-12 mt-16 mb-12">
                 <button type="submit" className="p-1 bg-gray-300">
@@ -127,7 +127,7 @@ const EventCard =() => {
                     style={{border: "none"}}
                     type="text" className="w-5/6 text-x1 text-white bg-gray-300 border-0 focus:outline-none  text-center focus:text-gray-900 align-middle"
                     SvgIcon={<SearchIcon />}       
-                    placeholder="Find a club event"
+                    placeholder="ابحث عن فعالية"
                   ></input>
                   
                 </div>

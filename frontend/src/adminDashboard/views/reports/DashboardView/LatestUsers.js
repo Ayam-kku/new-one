@@ -15,13 +15,16 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  makeStyles
+  makeStyles,
+  MuiThemeProvider
 } from '@material-ui/core';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import { getDataUsers } from './connectDB/getdata';
 
+
 const useStyles = makeStyles(() => ({
-  root: {},
+  root: {
+  },
   actions: {
     justifyContent: 'flex-end'
   }
@@ -35,40 +38,41 @@ const LatestOrders = ({ className, ...rest }) => {
   getDataUsers().then((u) =>setUsers(u));
 
   return (
+    
     <Card
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title="Latest Users" />
+      <CardHeader title="المستخدمين المضافين حديثا" />
       <Divider />
       <PerfectScrollbar>
         <Box minWidth={800}>
           <Table>
-            <TableHead>
+            <TableHead >
               <TableRow>
                 
                 <TableCell>
-                  No.
+                  التسلسل
+                </TableCell>
+                
+                <TableCell >
+                  الاسم
+                </TableCell>
+
+                <TableCell>
+                 البريد الاكتروني
                 </TableCell>
                 
                 <TableCell>
-                  Name
+                 الحالة
                 </TableCell>
 
                 <TableCell>
-                 Email
-                </TableCell>
-                
-                <TableCell>
-                 Active
+                 التصنيف
                 </TableCell>
 
                 <TableCell>
-                 Type
-                </TableCell>
-
-                <TableCell>
-                 Phone
+                 الجوال
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -132,7 +136,7 @@ const LatestOrders = ({ className, ...rest }) => {
           style={{ color: '#1E8449' }}
           onClick={()=>{ navigate('/app/admin/users', { replace: true }); }}
         >
-          View all
+        رؤية الكل
         </Button>
       </Box>
     </Card>

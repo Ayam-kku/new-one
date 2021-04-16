@@ -27,12 +27,10 @@ export default function HeadCover() {
                 <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                   <div  className="pr-12">
                     <h1 data-aos="fade-right" className="text-green-500 font-black text-5xl">
-                      STUDENT CLUBS<span className="text-white font-semibold text-5xl"> at King Khalid University</span>
+                      وحدة الأندية الطلابية<span className="text-white font-black text-5xl"> في جامعة الملك خالد</span>
                     </h1>
                     <p className="mt-4 text-lg text-gray-300">
-                    This platform aspires to display all student clubs.
-                    And helping students to participate and benefit 
-                    from the activities that clubs offer.
+                    تطمح هذه المنصة لعرض جميع الأندية الطلابية. ومساعدة الطلاب على المشاركة والاستفادة من الأنشطة التي تقدمها الأندية.
                     </p>
                   </div>
                 </div>

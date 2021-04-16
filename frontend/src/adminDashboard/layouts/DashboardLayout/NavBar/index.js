@@ -23,56 +23,57 @@ import NavItem from './NavItem';
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.jpeg',
-  jobTitle: 'Admin',
-  name: 'Yazeed Alyazeedy'
+  jobTitle: 'مدير النظام',
+  name: 'يزيداليزيدي'
 };
 
 const items = [
   {
     href: '/app/admin/dashboard',
     icon: DashboardIcon,
-    title: 'Dashboard'
+    title: 'لوحة التحكم'
   },
   {
     href: '/app/admin/users',
     icon: GroupIcon,
-    title: 'Users'
+    title: 'المستخدمين'
   },
   {
     href: '/app/admin/college',
     icon: SchoolIcon,
-    title: 'Colleges'
+    title: 'الكليات'
   },
   {
     href: '/app/admin/department',
     icon: AccountBalanceIcon,
-    title: 'Departments'
+    title: 'الأقسام'
   },
   {
     href: '/app/admin/committee',
     icon: MeetingRoomIcon,
-    title: 'Committees'
+    title: 'اللجان'
   },
   {
     href: '/app/admin/typesofevents',
     icon: EventNoteIcon,
-    title: 'Types of events'
+    title: 'انواع الفعاليات'
   },
   {
     href: '/app/admin/settings',
     icon: Icon.Settings,
-    title: 'Settings'
+    title: 'الإعدادات'
   }
 ];
 
 const useStyles = makeStyles(() => ({
   mobileDrawer: {
-    width: 256
+    width: 256,
   },
   desktopDrawer: {
     width: 256,
     top: 64,
-    height: 'calc(100% - 64px)'
+    height: 'calc(100% - 64px)',
+    
   },
   avatar: {
     cursor: 'pointer',

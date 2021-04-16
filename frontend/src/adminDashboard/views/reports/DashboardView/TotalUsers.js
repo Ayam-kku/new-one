@@ -48,7 +48,7 @@ const TotalCustomers = ({ className, ...rest }) => {
               gutterBottom
               variant="h6"
             >
-              TOTAL USERS
+              مجموع المستخدمين
             </Typography>
             <Typography
               color="textPrimary"

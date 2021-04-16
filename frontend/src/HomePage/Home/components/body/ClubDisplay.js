@@ -18,7 +18,7 @@ export default function AllClub() {
             <div className="flex flex-wrap justify-center text-center mb-12">
               <div className="w-full lg:w-6/12 px-4">
                 <h2  className="text-green-500 uppercase font-bold text-5xl">
-                All university clubs
+                جميع الأندية في الجامعة
                 </h2>
                 <div className="flex flex-wrap justify-center mt-16">
                 
@@ -37,7 +37,7 @@ export default function AllClub() {
                         </InputAdornment>
                       )
                     }}
-                    placeholder="Find a club "
+                    placeholder="ابحث عن نادي"
                     variant="filled"
                   />
                   

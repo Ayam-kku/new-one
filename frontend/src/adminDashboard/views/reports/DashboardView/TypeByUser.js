@@ -61,7 +61,7 @@ const TrafficByDevice = ({ className, ...rest }) => {
         hoverBorderColor: colors.common.white
       }
     ],
-    labels: ['Student','Admin', 'Student Activity Unit','dean', 'Staff']
+    labels: ['طالب','مدير', 'وحدة الأنشطة الطلابية','عميد', 'موظف']
   };
 
   const options = {
@@ -75,31 +75,31 @@ const TrafficByDevice = ({ className, ...rest }) => {
 
   const users = [
     {
-      title: 'Admin',
+      title: 'مدير',
       value: Math.round((100 / total) * admin),
       icon: PersonIcon,
       color: '#FDBB2F'
     },
     {
-      title: 'SAU',
+      title: 'وحدة الانشطة الطلابية',
       value: Math.round((100 / total) * SAU),
       icon: PersonIcon,
       color: '#377B2B'
     },
     {
-      title: 'Dean',
+      title: 'عميد',
       value: Math.round(((100 / total) * dean)),
       icon: PersonIcon,
       color: '#007CC3'
     },
     {
-      title: 'Staff',
+      title: 'موظف',
       value: Math.round((100 / total) * staff),
       icon: PersonIcon,
       color: '#F47A1F'
     },
     {
-      title: 'Student',
+      title: 'طالب',
       value: Math.round((100 / total) * student),
       icon: PersonIcon,
       color: '#00529B'
@@ -111,7 +111,7 @@ const TrafficByDevice = ({ className, ...rest }) => {
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title="Users By Type" />
+      <CardHeader title="المستخدمين بالنسبة للصنف" />
       <Divider />
       <CardContent>
         <Box

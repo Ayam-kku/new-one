@@ -60,7 +60,7 @@ const AddEvent = () => {
   });
 
   const getDataClub = async () => {
-    const res = await axios('/api/club?id=6071d194d7edbe148cce1eff');
+    const res = await axios('/api/club?id=604ea20dd0367415e82112af');
     return res.data;
   }
 
@@ -110,7 +110,7 @@ useEffect(()=>{
   function uploadDataToDB() {
       axios({
           method: 'put',
-          url: `/api/club/6071d194d7edbe148cce1eff`,
+          url: `/api/club/604ea20dd0367415e82112af`,
           data: qs.stringify(club),
           headers: {
             'content-type': 'application/x-www-form-urlencoded;charset=utf-8'

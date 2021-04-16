@@ -25,7 +25,7 @@ export function ViewInfo (props) {
  
     const classes = useStyles();
 
-    const _id = props._id !== undefined ? props._id:'6071d194d7edbe148cce1eff'; 
+    const _id = props._id !== undefined ? props._id:'604ea20dd0367415e82112af'; 
  
     const [info, setInfo] = useState([]);
     getClubInfo(_id).then((u) =>setInfo(u));

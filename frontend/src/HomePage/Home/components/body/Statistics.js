@@ -38,7 +38,7 @@ export default function Statistics() {
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
                       <i className="fab fa-font-awesome-flag"></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Clubs</h6>
+                    <h6 className="text-xl font-semibold">نادي</h6>
                     <p className="normal-nums font-bold text-6xl mt-2 mb-4 text-green-500">
                      <CountUp duration={3} end={club}/>
                       
@@ -54,7 +54,7 @@ export default function Statistics() {
                       <i className="fas fa-users"></i>
                     </div>
                     <h6 className="text-xl font-semibold">
-                    Members
+                    طالب
                     </h6>
                     <p className="font-bold normal-nums text-6xl mt-2 mb-4 text-green-500">
                     <CountUp duration={3} start={0} end={users}/>
@@ -65,7 +65,7 @@ export default function Statistics() {
                 <div className="flex flex-wrap justify-center text-center">
                   <div className="w-full lg:w-6/12 px-4">
                     <h2  className="text-black-500 font-bold text-4xl">
-                    STATISTICS
+                    إحصائيات
                     </h2>
                     </div>
                     </div>
@@ -78,7 +78,7 @@ export default function Statistics() {
                     <i className="fab fa-buysellads"></i>
                     </div>
                     <h6 className="text-xl font-semibold">
-                      Events
+                      فعالية
                     </h6>
                     <p className="normal-nums font-bold text-6xl mt-2 mb-4 text-green-500">
                     <CountUp duration={3} end={event}/>

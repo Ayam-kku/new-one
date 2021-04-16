@@ -44,7 +44,7 @@ const Department = ({ className, ...rest }) => {
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title="Latest Departments" />
+      <CardHeader title="الاقسام المضافة حديثا" />
       <Divider />
       <PerfectScrollbar>
         <Box minWidth={700}>
@@ -52,16 +52,16 @@ const Department = ({ className, ...rest }) => {
             <TableHead>
               <TableRow>
                 <TableCell>
-                  No.	
+                  الرقم	
                 </TableCell>
                 <TableCell>
-                  name
+                  الاسم
                 </TableCell>
                 <TableCell sortDirection="desc">  
-                  Building
+                  المبنى
                 </TableCell>
                 <TableCell>
-                  College
+                  الكلية
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -104,7 +104,7 @@ const Department = ({ className, ...rest }) => {
           style={{ color: '#1E8449' }}
           onClick={()=>{ navigate('/app/admin/department', { replace: true }); }}
         >
-          View all
+          رؤية الكل
         </Button>
       </Box>
     </Card>
