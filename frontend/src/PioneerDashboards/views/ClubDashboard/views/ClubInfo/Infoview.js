@@ -10,11 +10,15 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { makeStyles } from '@material-ui/styles';
 import { getClubInfo } from "./clubService";
-import purple from '@material-ui/core/colors/purple';
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
+
 
 const useStyles = makeStyles((theme)=>({
   root: {},
   paper: {
+    direction: 'rtl',
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
@@ -22,7 +26,7 @@ const useStyles = makeStyles((theme)=>({
 }));
 
 export function ViewInfo (props) {
- 
+  const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
     const classes = useStyles();
 
     const _id = props._id !== undefined ? props._id:'6071d194d7edbe148cce1eff'; 
@@ -35,9 +39,9 @@ export function ViewInfo (props) {
     },[]);
 
   return (
-     
+    <StylesProvider jss={jss}>
         <Paper className= {classes.paper} style={{  marginTop: 15 }}>
-            <Typography  data-aos="fade-right" component="div">
+            <Typography  data-aos="fade-left" component="div">
                     <Box  color ="#1e8449" textAlign="left" m={1} fontWeight="fontWeightBold" fontSize={18}>
                         The club vision:
                         </Box>
@@ -75,6 +79,7 @@ export function ViewInfo (props) {
                     
                 </Typography>
         </Paper>    
+        </StylesProvider>
   );
 };
 

@@ -18,6 +18,9 @@ import EventNoteIcon from '@material-ui/icons/EventNote';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import CategoryIcon from '@material-ui/icons/Category';
 import NavItem from './NavItem';
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
 
 const user = {
   avatar: '/static/images/avatars/atef.jfif',
@@ -55,9 +58,11 @@ const items = [
 
 const useStyles = makeStyles(() => ({
   mobileDrawer: {
+    direction: 'rtl',
     width: 256
   },
   desktopDrawer: {
+    direction: 'rtl',
     width: 256,
     top: 64,
     height: 'calc(100% - 64px)'
@@ -70,6 +75,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const NavBar = ({ onMobileClose, openMobile }) => {
+  const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
   const classes = useStyles();
   const location = useLocation();
 
@@ -138,6 +144,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
 
   return (
     <>
+     <StylesProvider jss={jss}>
       <Hidden lgUp>
         <Drawer
           anchor="left"
@@ -159,6 +166,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           {content}
         </Drawer>
       </Hidden>
+      </StylesProvider>
     </>
   );
 };

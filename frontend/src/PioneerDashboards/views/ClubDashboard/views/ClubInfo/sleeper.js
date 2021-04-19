@@ -8,9 +8,13 @@ import { Grid, Icon } from '@material-ui/core';
 import WarningIcon from '@material-ui/icons/Warning';
 import Popup from '../../controls/Popup';
 import Alert from './displayAlert';
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    direction: 'rtl',
     width: '100%',
   },
   backButton: {
@@ -30,6 +34,9 @@ function getSteps() {
 
 
 export default function HorizontalLabelPositionBelowStepper(props) {
+
+  const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -45,6 +52,7 @@ export default function HorizontalLabelPositionBelowStepper(props) {
     setOpenPopup(true)
 }
   return (
+    <StylesProvider jss={jss}>
     <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label,index) => (
@@ -82,5 +90,6 @@ export default function HorizontalLabelPositionBelowStepper(props) {
           <Alert club={props.club}/>
         </Popup>
     </div>
+    </StylesProvider>
   );
 }

@@ -8,15 +8,17 @@ import { Grid, Icon } from '@material-ui/core';
 import WarningIcon from '@material-ui/icons/Warning';
 import Popup from '../../controls/Popup';
 import Alert from './displayAlert';
-
-
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    direction: 'rtl',
     width: '100%',
   },
   backButton: {
-    marginRight: theme.spacing(1),
+    marginLeft: theme.spacing(1),
   },
   instructions: {
     marginTop: theme.spacing(1),
@@ -31,6 +33,7 @@ function getSteps() {
 
 
 export default function HorizontalLabelPositionBelowStepper(props) {
+  const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -49,6 +52,7 @@ export default function HorizontalLabelPositionBelowStepper(props) {
 }
 console.log(props.club.notefrompioneer);
   return (
+    <StylesProvider jss={jss}>
     <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label,index) => (
@@ -66,7 +70,7 @@ console.log(props.club.notefrompioneer);
             onClick ={(()=>{
               setOpenPopup(true);
             })}
-            style={{ marginLeft:2 }}
+            style={{ marginRight:2 }}
             variant="caption"
             color="error">
               Alert message from pioneer
@@ -85,7 +89,7 @@ console.log(props.club.notefrompioneer);
             onClick ={(()=>{
               setOpenPopup(true);
             })}
-            style={{ marginLeft:2 }}
+            style={{ marginRight:2 }}
             variant="caption"
             onClick ={(()=>{
               setOpenPopup(true);
@@ -106,5 +110,6 @@ console.log(props.club.notefrompioneer);
           <Alert club={props.club}/>
         </Popup>
     </div>
+    </StylesProvider>
   );
 }

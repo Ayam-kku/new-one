@@ -57,13 +57,6 @@ const Toolbar = ({ className, ...rest }) => {
   const status3 = useSelector((state) => state.stateInfoUser);
   const dispatch = useDispatch();
 
-
-  const [screen, setScreen] = useState(window.matchMedia("(min-width: 800px)").matches);
-  useEffect(() => {
-    const handler = (e) => { return setScreen(e.matches); };
-    window.matchMedia("(min-width: 800px)").addListener(handler);
-  });
-
   const handleClick = () => {
     dispatch(changeStatusOfStateToStart());  
     dispatch(fetchColleges());
@@ -71,25 +64,13 @@ const Toolbar = ({ className, ...rest }) => {
   };
 
   return (
-    <div
-    className={clsx(classes.root, className)}
-    {...rest}
-  >
-
+    <div className='flex lg:flex bg-white p-5 rounded shadow md:flex sm:flex justify-between '
+    >
   {status === true && (<AddClub />)}
   {(status2 === true) && (<UpdateClub />)}
   {(status3 === true) && (<MoreInfoUser />)}
 
-    <Box mt={3}>
-      <Card>
-        <CardContent style={{ position:'relative' }}>
-          <Box 
-          maxWidth={500}
-          display="flex"
-          justifyContent="space-between"
-          flex-direction="column"
-          >
-          { screen === true ? (
+  <div className="lg:w-1/2 md:w-1/2 sm:w-1/2 w-1/2">
             <TextField
               fullWidth
               InputProps={{
@@ -106,36 +87,8 @@ const Toolbar = ({ className, ...rest }) => {
               }}
               placeholder="Search club"
               variant="outlined"
-            />)
-             : (
-              <TextField
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SvgIcon
-                      fontSize="small"
-                      color="action"
-                    >
-                      <SearchIcon />
-                    </SvgIcon>
-                  </InputAdornment>
-                )
-              }}
-              placeholder="Search college"
-              variant="outlined"
             />
-            ) }
-            
-            { screen === true ? (
-              
-            <Button
-            style={{ background:"#1E8449", color:'#ffffff', position: "absolute", right: "0px", marginRight:"18px", marginTop:"6px", padding:"12px" }}
-            variant="contained"
-            onClick={handleClick}
-            >
-            Add club
-          </Button>
-          ) : (
+            </div>
         <Button
         style={{ background:"#1E8449", color:'#ffffff' }}
         variant="contained"
@@ -143,12 +96,6 @@ const Toolbar = ({ className, ...rest }) => {
       >
         Add club
       </Button>
-          )}
-
-      </Box>
-        </CardContent>
-      </Card>
-    </Box>
   </div>
   );
 };

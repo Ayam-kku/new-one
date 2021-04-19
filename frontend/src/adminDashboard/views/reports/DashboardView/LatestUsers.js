@@ -20,15 +20,18 @@ import {
 } from '@material-ui/core';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import { getDataUsers } from './connectDB/getdata';
-
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
-  root: {
-  },
+  direction: 'rtl',
   actions: {
     justifyContent: 'flex-end'
   }
 }));
+
+const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 
 const LatestOrders = ({ className, ...rest }) => {
   const classes = useStyles();
@@ -38,9 +41,9 @@ const LatestOrders = ({ className, ...rest }) => {
   getDataUsers().then((u) =>setUsers(u));
 
   return (
-    
+    <StylesProvider jss={jss}>
     <Card
-      className={clsx(classes.root, className)}
+      className={clsx(classes.direction, className)}
       {...rest}
     >
       <CardHeader title="المستخدمين المضافين حديثا" />
@@ -140,6 +143,7 @@ const LatestOrders = ({ className, ...rest }) => {
         </Button>
       </Box>
     </Card>
+    </StylesProvider>
   );
 };
 

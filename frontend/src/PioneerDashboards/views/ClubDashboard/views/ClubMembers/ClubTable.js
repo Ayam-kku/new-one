@@ -6,7 +6,6 @@ import {
   Avatar,
   Box,
   Card,
-  Checkbox,
   Table,
   TableBody,
   TableCell,
@@ -21,17 +20,21 @@ import Popup from '../../controls/Popup';
 import IconButton from '@material-ui/core/IconButton';
 import RemoveRedEyeIcon from '@material-ui/icons/RemoveRedEye';
 import MemberInfo from './member serv/MemberInfo'
-
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    direction: 'rtl',
+  },
   avatar: {
     marginRight: theme.spacing(2)
   }
 }));
 
 const ClubTable = ({ className, members: members, ...rest }) => {
-  
+  const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
   const [openPopup, setOpenPopup] = useState(false)
   const openInPopup = item => {
     setOpenPopup(true)
@@ -57,6 +60,7 @@ const ClubTable = ({ className, members: members, ...rest }) => {
    console.log(openPopup);
   
   return (
+    <StylesProvider jss={jss}>
     <Card
       className={clsx(classes.root, className)}
       {...rest}
@@ -177,6 +181,7 @@ const ClubTable = ({ className, members: members, ...rest }) => {
       
         
     </Card>
+    </StylesProvider>
   );
 };
 

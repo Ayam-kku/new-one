@@ -1,10 +1,10 @@
 import { Paper, Card, Typography, makeStyles } from '@material-ui/core'
 import React from 'react'
 
+
 const useStyle = makeStyles((theme) => ({
     root:{
         backgroundColor:'#1e8449',
-        
     },
     pageHeader:{
         padding:theme.spacing(2),
@@ -17,7 +17,7 @@ const useStyle = makeStyles((theme) => ({
         color:"#1e8449"   
     },
     pagtitle:{
-        paddingLeft:theme.spacing(4),
+        paddingRight:theme.spacing(4),
         color:"#fff",
         '& .MuiTypography-subtitle2':{
             opacity: 0.6
@@ -25,11 +25,13 @@ const useStyle = makeStyles((theme) => ({
     }
 }))
 
+
 export default function PageHeader(props) {
     const classes = useStyle();
     const { title, subtitle, icon } = props;
 
     return (
+       
         <Paper elevation={0} square className={classes.root}>
             <div className={classes.pageHeader}>
                 <Card className={classes.pagIcon}>

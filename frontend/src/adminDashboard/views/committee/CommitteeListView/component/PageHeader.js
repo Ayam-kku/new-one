@@ -17,7 +17,7 @@ const useStyle = makeStyles((theme) => ({
         color:"#1e8449"   
     },
     pagtitle:{
-        paddingLeft:theme.spacing(4),
+        paddingRight:theme.spacing(4),
         color:"#fff",
         '& .MuiTypography-subtitle2':{
             opacity: 0.6

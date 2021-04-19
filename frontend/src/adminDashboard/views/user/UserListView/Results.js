@@ -93,35 +93,35 @@ const Results = ({ className, customers, ...rest }) => {
               <TableRow>
                 
               <TableCell>
-                  No.
+                 التسلسل
               </TableCell>
 
                 <TableCell>
-                  Name
+                  الاسم
                 </TableCell>
                 
                 <TableCell>
-                  Type
+                  الصنف
                 </TableCell>
 
                 <TableCell>
-                  Position
+                 المنصب
                 </TableCell>
 
                 <TableCell>
-                  Status
+                 الحالة
                 </TableCell>
 
                 <TableCell>
-                  Email
+                  البريدالإلكتروني
                 </TableCell>
                 
                 <TableCell>
-                  Phone
+                  الجوال
                 </TableCell>
 
                 <TableCell style={{ paddingLeft:"65px" }}>
-                  Action
+                  الأحداث
                 </TableCell>
 
               </TableRow>

@@ -32,12 +32,6 @@ const Toolbar = ({ className, ...rest }) => {
   const status = useSelector((state) => state.state);
   const dispatch = useDispatch();
 
-  const [screen, setScreen] = useState(window.matchMedia("(min-width: 800px)").matches);
-  useEffect(() => {
-    const handler = (e) => { console.log(e); return setScreen(e.matches); };
-    window.matchMedia("(min-width: 800px)").addListener(handler);
-  });
-
 const handleClick = () => {
   dispatch(changeStatusOfStateToStart());
 };
@@ -45,22 +39,10 @@ const handleClick = () => {
     dispatch(changeStatusOfSearch(event.target.value));
   }
   return (
-    <div
-      className={clsx(classes.root, className)}
-      {...rest}
+    <div className='flex lg:flex bg-white p-5 rounded shadow md:flex sm:flex justify-between '
     >
     {status === true && (<AddCommittee />)}
-    
-      <Box mt={3}>
-        <Card>
-          <CardContent style={{ position:'relative' }}>
-            <Box 
-            maxWidth={500}
-            display="flex"
-            justifyContent="space-between"
-            flex-direction="column"
-            >
-            { screen === true ? (
+    <div className="lg:w-1/2 md:w-1/2 sm:w-1/2 w-1/2">
               <TextField
                 fullWidth
                 onChange={changeSearchItem}
@@ -78,38 +60,8 @@ const handleClick = () => {
                 }}
                 placeholder="Search committee"
                 variant="outlined"
-              />)
-               : (
-                <TextField
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment 
-                    position="start"
-                    >
-                      <SvgIcon
-                        fontSize="small"
-                        color="action"
-                      >
-                        <SearchIcon />
-                      </SvgIcon>
-                    </InputAdornment>
-                  )
-                }}
-                onChange={changeSearchItem}
-                placeholder="Search committee"
-                variant="outlined"
               />
-              ) }
-              
-              { screen === true ? (
-              <Button
-              style={{ background:"#1E8449", color:'#ffffff', position: "absolute", right: "0px", marginRight:"18px", marginTop:"6px", padding:"12px" }}
-              variant="contained"
-              onClick={handleClick}
-            >
-              Add committee
-            </Button>
-            ) : (
+              </div>
           <Button
           style={{ background:"#1E8449", color:'#ffffff' }}
           variant="contained"
@@ -117,12 +69,6 @@ const handleClick = () => {
         >
           Add committee
         </Button>
-            )}
-
-        </Box>
-          </CardContent>
-        </Card>
-      </Box>
     </div>
   );
 };

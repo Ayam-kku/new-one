@@ -47,22 +47,10 @@ const Toolbar = ({ className, ...rest }) => {
   }
 
   return (
-    <div
-    className={clsx(classes.root, className)}
-    {...rest}
-  >
+    <div className='flex lg:flex bg-white p-5 rounded shadow md:flex sm:flex justify-between '
+    >
   {status === true && (<AddCollege />)}
-  
-    <Box mt={3}>
-      <Card>
-        <CardContent style={{ position:'relative' }}>
-          <Box 
-          maxWidth={500}
-          display="flex"
-          justifyContent="space-between"
-          flex-direction="column"
-          >
-          { screen === true ? (
+  <div className="lg:w-1/2 md:w-1/2 sm:w-1/2 w-1/2">
             <TextField
               fullWidth
               InputProps={{
@@ -80,36 +68,8 @@ const Toolbar = ({ className, ...rest }) => {
               onChange={changeSearchItem}
               placeholder="Search college"
               variant="outlined"
-            />)
-             : (
-              <TextField
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SvgIcon
-                      fontSize="small"
-                      color="action"
-                    >
-                      <SearchIcon />
-                    </SvgIcon>
-                  </InputAdornment>
-                )
-              }}
-              placeholder="Search college"
-              variant="outlined"
             />
-            ) }
-            
-            { screen === true ? (
-              
-            <Button
-            style={{ background:"#1E8449", color:'#ffffff', position: "absolute", right: "0px", marginRight:"18px", marginTop:"6px", padding:"12px" }}
-            variant="contained"
-            onClick={handleClick}
-            >
-            Add college
-          </Button>
-          ) : (
+            </div>
         <Button
         style={{ background:"#1E8449", color:'#ffffff' }}
         variant="contained"
@@ -117,12 +77,6 @@ const Toolbar = ({ className, ...rest }) => {
       >
         Add college
       </Button>
-          )}
-
-      </Box>
-        </CardContent>
-      </Card>
-    </Box>
   </div>
   );
 };
